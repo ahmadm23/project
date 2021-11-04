@@ -74,14 +74,7 @@
     </tr>
   </tbody>
 </table>
-<div class="dropdown">
-  <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Dropdown Example
-  <span class="caret"></span></button>
-  <ul class="dropdown-menu">
-    <li><a href="#">HTML</a></li>
-    <li><a href="#">CSS</a></li>
-    <li><a href="#">JavaScript</a></li>
-  </ul> </div> <br>
+<br>
   
   <?php
 $cars = array("Volvo", "BMW", "Toyota"); 
@@ -100,7 +93,26 @@ echo "Joe is " . $ages['Joe'] . " years old.";
         <td><?= $age; ?></td>
     </tr>
     <?php endforeach; ?>
-</table>
+</table><br>
+<?php
+$characterName = "MJ";
+$characterAge = "25";
+$nameA = "Ahmad";
+$is = " is ";
+$ageA = 26;
+$phrase = "giraffe academy";
+$br = "<br>";
 
+echo "$characterName  is  $characterAge <br>";
+echo $nameA, $is, $ageA;
+echo $br;
+echo strtolower ($characterName);
+echo $br;
+echo strtoupper ($nameA);
+echo $br;
+echo $nameA [3];
+echo $br;
+echo str_replace("giraffe", "panda", $phrase);
+?>
 
   </body></html>
