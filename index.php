@@ -28,26 +28,40 @@
           <div class="row">
         </div>
       </div>
-    
 <form>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4">
     <label for="fname">First name:</label><br>
-    <input type="text" id="fname" name="fname"> <input type="submit" value="Submit"><br>
-    <label for="lname">Last name:</label><br>
-    <input type="text" id="lname" name="lname"> <input type="submit" value="Submit"><br><br>
-    <input type="submit" class="btn btn-info" value="Submit Button"><br><br>
-    
-    <label for="time">Time</label> &nbsp;<input type="time" id="time" name="Current time">
-    <input type="week" id="week" name="Day"><br><br>
-    
-    <label for="phone">Phone Number</label>
-    <input type="tel" id="phone" name="Phone Number" placeholder="123-45-678" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"><br><br>
-    
+    <input type="text" id="fname" name="fname"><br></div>
+    <div class="col-sm-4">
+      <label for="lname">Last name:</label><br>
+    <input type="text" id="lname" name="lname"><br><br></div>
+    <div class="container">
+  <div class="row">
+    <div class="col-sm-4">
     <label for="email">Email</label>
-    <input type="email" id="email" name="email"><br><br>
+    <input type="email" id="email" name="email"></div>
+    <div class="col-sm-4">
+    <label for="tel">Phone Number</label>
+    <input type="tel" id="tel" name="tel" placeholder="123-45-678"><br><br></div>
+  </div>
+</div></div>
+
+    <form action ="index.php" method="get">
+    <input type= "Submit">
+    </form><br><br>
+    Your first name is <?php echo $_GET["fname"]; ?>
+    <br>
+    Your last name is <?php echo $_GET["lname"];?>
+    <br>
+    Your email is <?php echo $_GET["email"]; ?>
+    <br>
+    Your phone numebr is <?php echo $_GET["tel"]; ?>
+    <br><br>
+
     
-    <input type="checkbox" id="box" name="checkthis">
-    <label for="checkthis">Sign up:</label><br>
-</form><br>
+<br>
 <table class="table table-hover">
   <thead>
     <tr>
@@ -113,6 +127,15 @@ echo $br;
 echo $nameA [3];
 echo $br;
 echo str_replace("giraffe", "panda", $phrase);
+?>
+
+<form  action ="index.php" method="get">
+Enter Name: <input  type="text" name="fname">
+<input type= "Submit">
+</form><br>
+<?php
+echo $_GET["fname"];
+
 ?>
 
   </body></html>
