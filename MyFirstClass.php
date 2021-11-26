@@ -29,6 +29,11 @@ class MyFirstClass
     }
     public function addNewIndex($oldArray,$addedIndex){
             $newArray=$oldArray;
+            $info = $_POST['info'];
+            foreach($info as $info):
+            echo $info;
+            endforeach;
+            print_r($info);
 
 
             return $newArray;

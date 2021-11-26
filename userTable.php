@@ -15,5 +15,11 @@
             <td><?=$user['num']?></td>
         </tr>
         <?php endforeach;?>
+        <tr>
+            <td><?= $firstName; ?></td>
+            <td><?= $lastName; ?></td>
+            <td><?= $email; ?></td>
+            <td><?= $phoneNum; ?></td>
+        </tr>
     </tbody>
 </table>
