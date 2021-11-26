@@ -24,37 +24,6 @@
         <p>Your phone number is <?= $phoneNum?></p>
         <?php include('./userTable.php'); ?>
 
-
-        <?php echo "I like " . $cars[0] . ", " . $cars[1] . " and " . $cars[2] . "."; ?>
-        <?php echo "Joe is " . $ages['Joe'] . " years old."; ?>
-
-        <table>
-            <?php foreach ($ages as $key => $age) : ?>
-                <tr>
-                    <td><?= $key; ?></td>
-                    <td><?= $age; ?></td>
-                </tr>
-            <?php endforeach; ?>
-        </table><br>
-
-
-
-        <?= 
-        $characterName."   is ". $characterAge.
-         $nameA." ".
-         $is." ".
-         $ageA ." ".
-         strtolower($characterName).
-         strtoupper($nameA).
-         $nameA[3].
-         str_replace("giraffe", "panda", $phrase); ?>
-
-        <form action="index.php" method="get">
-            Enter Name: <input type="text" name="fname">
-            <input type="Submit">
-        </form><br>
-        <?php echo $_GET["fname"]; ?>
-    </div>
 </body>
 
 </html>
