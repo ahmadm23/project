@@ -17,13 +17,7 @@
     <div class="container">
         <h3 class="text-info"> Fill out to Sign up</h3>
         <?php include('./customerForm.php'); ?>
-
-        <p>Your first name is <?= $firstName; ?> </p>
-        <p>Your last name is <?= $lastName; ?></p>
-        <p>Your email is <?= $email; ?></p>
-        <p>Your phone number is <?= $phoneNum?></p>
         <?php include('./userTable.php'); ?>
-
 </body>
 
 </html>

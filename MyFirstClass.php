@@ -1,15 +1,17 @@
 <?php
-
+require_once('./DbConnect.php');
 class MyFirstClass
 {
-    private $test;
+    private $db;
+  private $mysql;
 
-    function __construct()
-    {
-        $this->test = 'hey im a test';
-    }
+  function __construct()
+  {
+    $this->db = new DbConnect;
+    $this->mysql = $this->db->getdbconnect();
+  }
 
-    public function getUSers()
+    public function getUsers()
     {
         $users= [
             [
@@ -26,16 +28,29 @@ class MyFirstClass
             ]
         ];
         return $users;
+        $info= [
+            [
+                '$firstName',
+                '$lastName',
+                '$email',
+                '$phoneNum'
+            ],
+        ];
+        return $info;
     }
+
+
     public function addNewIndex($oldArray,$addedIndex){
             $newArray=$oldArray;
-            $info = $_POST['info'];
-            foreach($info as $info):
-            echo $info;
-            endforeach;
-            print_r($info);
-
-
+            $info = array($firstName, $lastName, $email, $phoneNum);
+            array_push($info);
             return $newArray;
     }
+    public function getUsers2()
+  {
+    $sql = "select username,f_name,l_name,email,phone from users";
+    $result = $this->mysql->prepare($sql);
+    $result->execute();
+    return $result->fetchAll(PDO::FETCH_ASSOC);
+  }
 }
