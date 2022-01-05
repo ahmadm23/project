@@ -6,8 +6,8 @@ $('.btn').on('click',function(){
     var lnameInputValue=$('#lname').val();
     var emailInputValue=$('#email').val();
     var telInputValue=$('#tel').val();
-    var action = 'submitUser';
-    $.post("index.php",{action:action,user:userInputValue,fname:fnameInputValue,lname:lnameInputValue,email:emailInputValue,tel:telInputValue},function(success) {
+    var submit = 'submitUser';
+    $.post("index.php",{action:submit,user:userInputValue,fname:fnameInputValue,lname:lnameInputValue,email:emailInputValue,tel:telInputValue},function(success) {
 if (success ==1){
     location.reload();
 }
