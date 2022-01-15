@@ -1,4 +1,5 @@
 <?php
+//we may want to change the name of this
 require_once('../DbConnect.php');
 class MyFirstClass
 {
@@ -45,8 +46,8 @@ class MyFirstClass
     $result->bindValue(':password', $password);
     $result->execute();
     $id = $result->fetch(PDO::FETCH_COLUMN);
-    
-    if(isset($id) &&  !empty($id)){
+  
+    if(isset($id) && !empty($id)){
       $this->startSessionAndSetUser($username,$id);
       return true;
     }else{
