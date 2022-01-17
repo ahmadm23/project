@@ -13,16 +13,17 @@ class MyFirstClass
   }
 
 
-  public function addNewUser($username, $fistName, $lastName, $email, $tel)
+  public function addNewUser($username, $fistName, $lastName, $email, $phone, $password)
   {
-    $sql = "INSERT INTO users (username, f_name, l_name, email, phone)
-            VALUES (:username, :f_name, :l_name, :email, :phone)";
+    $sql = "INSERT INTO users (username, f_name, l_name, email, phone, password)
+            VALUES (:username, :f_name, :l_name, :email, :phone, :password)";
     $query = $this->mysql->prepare($sql);
     $query->bindValue(':username', $username);
     $query->bindValue(':f_name', $fistName);
     $query->bindValue(':l_name', $lastName);
     $query->bindValue(':email', $email);
-    $query->bindValue(':phone', $tel);
+    $query->bindValue(':phone', $phone);
+    $query->bindValue(':password', $password);
     return $query->execute();
   }
 
