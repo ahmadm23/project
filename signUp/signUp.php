@@ -15,6 +15,6 @@ if (isset($_POST['action'])) {
             break;
     }
 } else {
-    include("../view.tpl.php");
+    include("./signUpform.tpl.php");
 }
 ?>

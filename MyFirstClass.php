@@ -46,21 +46,54 @@ class MyFirstClass
     $result->bindValue(':password', $password);
     $result->execute();
     $id = $result->fetch(PDO::FETCH_COLUMN);
-  
-    if(isset($id) && !empty($id)){
-      $this->startSessionAndSetUser($username,$id);
+
+    if (isset($id) && !empty($id)) {
+      $this->startSessionAndSetUser($username, $id);
       return true;
-    }else{
+    } else {
       return false;
     }
-
   }
 
-  public function startSessionAndSetUser($username, $id){
+  public function startSessionAndSetUser($username, $id)
+  {
     session_start();
     // Store data in session variables
     $_SESSION["loggedin"] = true;
     $_SESSION["id"] = $id;
     $_SESSION["username"] = $username;
+  }
+
+  public function updatetask($task_id)
+  {
+    $sql="UPDATE task SET status = Done WHERE task_id = :task_id";
+    $query = $this->mysql->prepare($sql);
+    $query->bindValue(':task_id', $task_id);
+    return $query->execute(); 
+  }
+
+  public function addtask($task)
+  {
+    $sql = "INSERT INTO task (task)
+    VALUES (:task)";
+    $query = $this->mysql->prepare($sql);
+    $query->bindValue(':task', $task);
+    return $query->execute();
+    }
+
+  public function deletetask($task_id)
+  {
+    $sql="DELETE FROM task WHERE task_id = :task_id";
+    $query = $this->mysql->prepare($sql);
+    $query->bindValue(':task_id', $task_id);
+    return $query->execute();
+  }
+
+  public function gettasks()
+  {
+    $sql = 'select task_id, task, status from task';
+    $result = $this->mysql->prepare($sql);
+    $result->execute();
+    return $result->fetchAll(PDO::FETCH_ASSOC);
   }
 }
