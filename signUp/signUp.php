@@ -1,10 +1,10 @@
 <?php
-// if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
-//     header("location: ../toDo/toDoList.php");
-//     exit;
-// }
+if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
+    header("location: ../toDo/toDoList.php");
+    exit;
+}
 
-require_once("./MyFirstClass.php");
+require_once("../MyFirstClass.php");
 $class = new MyFirstClass;
 $users = $class->getUsers();
 if (isset($_POST['action'])) {

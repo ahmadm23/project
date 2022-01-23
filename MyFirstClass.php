@@ -1,6 +1,6 @@
 <?php
 //we may want to change the name of this
-require_once('./DbConnect.php');
+require_once(__DIR__.'/DbConnect.php');
 class MyFirstClass
 {
   private $db;

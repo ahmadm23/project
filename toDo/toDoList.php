@@ -1,5 +1,5 @@
 <?php
-require_once("./MyFirstClass.php");
+require_once("../MyFirstClass.php");
 $class = new MyFirstClass;
 $tasks = $class->gettasks();
 if (isset($_POST['action'])) {
