@@ -9,18 +9,23 @@
 </head>
 
 <body>
-
-<div class="input-group mb-3">
-  <input id="username" type="text" class="form-control" placeholder="username">
-</div>
-
-<div class="input-group mb-3">
-  <input id="password" type="text" class="form-control" placeholder="password">
-
-</div>
-<button id="loginbtn" type="button" class="btn btn-primary">Login</button>
-<a href="signUp/signUp.php">Don't have an account? Sign up!</a>
-
+<div class="container">
+<h3 class="mt-3 text-center">Log in or Sign Up!</h3>
+<div class="card">
+    <div class="card-body">
+        <form>
+            <div class="input-group mb-3">
+                <div class="col-sm-4 mb-3 px-3">
+                <input id="username" type="text" class="form-control" placeholder="Username">
+                </div>
+                <div class="col-sm-4 mb-3 px-3">
+                <input id="password" type="text" class="form-control" placeholder="Password">
+                </div></div>
+                <div class="col-sm-6 mb-3 px-3"><button id="loginbtn" type="button" class="btn btn-primary">Login</button>
+                <a href="signUp/signUp.php">Don't have an account? Sign up!</a>
+                </div>
+                
+               
 
         <!-- Option 1: Bootstrap Bundle with Popper -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>

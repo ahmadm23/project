@@ -14,10 +14,8 @@ if (isset($_POST['action'])) {
             case 'updatestatus':
                 echo $class->updatestatus($_POST['updatetaskid']);
                 break;
-                case 'logout':
-                    echo $class->logout();
-                    break;
     }
 } else {
     include("./toDoList.tpl.php");
 }
+

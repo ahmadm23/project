@@ -10,7 +10,9 @@ $users = $class->getUsers();
 if (isset($_POST['action'])) {
     switch ($_POST['action']) {
         case 'submitUser':
-            echo $class->addNewUser($_POST['username'], $_POST['fname'], $_POST['lname'], $_POST['email'], $_POST['phone']);
+            if ( $class->addNewUser($_POST['username'], $_POST['fname'], $_POST['lname'], $_POST['email'], $_POST['phone'], $_POST['password'])){
+                header("location: ../toDo/toDoList.php");
+            }
             break;
     }
 } else {
