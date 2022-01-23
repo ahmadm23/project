@@ -1,6 +1,6 @@
 <?php
 //we may want to change the name of this
-require_once(SITE_ROOT.'/DbConnect.php');
+require_once('./DbConnect.php');
 class MyFirstClass
 {
   private $db;

@@ -1,6 +1,5 @@
 <?php
-require_once __DIR__."/../config.php";
-require_once(SITE_ROOT."/MyFirstClass.php");
+require_once("./MyFirstClass.php");
 $class = new MyFirstClass;
 $tasks = $class->gettasks();
 if (isset($_POST['action'])) {
@@ -20,5 +19,5 @@ if (isset($_POST['action'])) {
                     break;
     }
 } else {
-    include(SITE_ROOT."/toDo/toDoList.tpl.php");
+    include("./toDoList.tpl.php");
 }

@@ -19,7 +19,7 @@
 
 </div>
 <button id="loginbtn" type="button" class="btn btn-primary">Login</button>
-<a href="../signUp/signUp.php">Don't have an account? Sign up!</a>
+<a href="signUp/signUp.php">Don't have an account? Sign up!</a>
 
 
         <!-- Option 1: Bootstrap Bundle with Popper -->

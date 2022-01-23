@@ -1,11 +1,10 @@
 <?php
-require_once __DIR__."/../config.php";
 // if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
 //     header("location: ../toDo/toDoList.php");
 //     exit;
 // }
 
-require_once(SITE_ROOT."/MyFirstClass.php");
+require_once("./MyFirstClass.php");
 $class = new MyFirstClass;
 $users = $class->getUsers();
 if (isset($_POST['action'])) {
@@ -15,6 +14,6 @@ if (isset($_POST['action'])) {
             break;
     }
 } else {
-    include(SITE_ROOT."/signUp/signUpform.tpl.php");
+    include("./signUpform.tpl.php");
 }
 ?>
