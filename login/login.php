@@ -1,9 +1,11 @@
 <?php
 require_once __DIR__."/../config.php";
-if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
-    header("location: ../toDo/toDoList.php");
-    exit;
-}
+var_dump($_SESSION);
+
+// if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
+//     header("location: ../toDo/toDoList.php");
+//     exit;
+// }
 require_once(SITE_ROOT."/MyFirstClass.php");
 $class = new MyFirstClass;
 if (isset($_POST['action'])) {
@@ -17,5 +19,5 @@ if (isset($_POST['action'])) {
             break;
     }
 } else {
-    include("../Test/login/login.tpl.php");
+    include(SITE_ROOT."/login/login.tpl.php");
 }
