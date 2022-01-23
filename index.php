@@ -1,5 +1,6 @@
 <?php
-if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
+
+if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
     header("location: ./toDo/toDoList.php");
     exit;
 }
@@ -11,8 +12,8 @@ if (isset($_POST['action'])) {
         case 'login':
             if ($class->login($_POST['username'], $_POST['password'])) {
 
-                header("location: ./toDo/toDoList.php");
 
+                header("location: ./toDo/toDoList.php");
             } else {
                 echo "error";
             }
@@ -20,5 +21,4 @@ if (isset($_POST['action'])) {
     }
 } else {
     include("./login/login.tpl.php");
-
 }
