@@ -4,12 +4,15 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
     exit;
 }
 require_once("./MyFirstClass.php");
+
 $class = new MyFirstClass;
 if (isset($_POST['action'])) {
     switch ($_POST['action']) {
         case 'login':
             if ($class->login($_POST['username'], $_POST['password'])) {
+
                 header("location: ./toDo/toDoList.php");
+
             } else {
                 echo "error";
             }
@@ -17,4 +20,5 @@ if (isset($_POST['action'])) {
     }
 } else {
     include("./login/login.tpl.php");
+
 }
