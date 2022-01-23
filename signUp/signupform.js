@@ -9,7 +9,7 @@ $(document).ready(function () {
     var confirm = $('#confirm').val();
 
     var submit = 'submitUser';
-    $.post("signUp.php",{action:submit,user:userInputValue,fname:fnameInputValue,lname:lnameInputValue,email:emailInputValue,tel:telInputValue},function(success) {
+    $.post("signUp.php",{action:submit,username:userInputValue,fname:fnameInputValue,lname:lnameInputValue,email:emailInputValue,phone:phoneInputValue},function(success) {
       if (success ==1){
     location.reload();
 }

@@ -1,6 +1,6 @@
 <?php
 //we may want to change the name of this
-require_once('../DbConnect.php');
+require_once(SITE_ROOT.'/DbConnect.php');
 class MyFirstClass
 {
   private $db;
@@ -13,16 +13,16 @@ class MyFirstClass
   }
 
 
-  public function addNewUser($username, $fistName, $lastName, $email, $tel)
+  public function addNewUser($username, $firstName, $lastName, $email, $phone)
   {
     $sql = "INSERT INTO users (username, f_name, l_name, email, phone)
             VALUES (:username, :f_name, :l_name, :email, :phone)";
     $query = $this->mysql->prepare($sql);
     $query->bindValue(':username', $username);
-    $query->bindValue(':f_name', $fistName);
+    $query->bindValue(':f_name', $firstName);
     $query->bindValue(':l_name', $lastName);
     $query->bindValue(':email', $email);
-    $query->bindValue(':phone', $tel);
+    $query->bindValue(':phone', $phone);
     return $query->execute();
   }
 
@@ -64,12 +64,12 @@ class MyFirstClass
     $_SESSION["username"] = $username;
   }
 
-  public function updatetask($task_id)
+  public function updatestatus($task_id)
   {
-    $sql="UPDATE task SET status = Done WHERE task_id = :task_id";
+    $sql = "UPDATE task SET status = 'Done' WHERE task_id = :task_id";
     $query = $this->mysql->prepare($sql);
     $query->bindValue(':task_id', $task_id);
-    return $query->execute(); 
+    return $query->execute();
   }
 
   public function addtask($task)
@@ -79,11 +79,11 @@ class MyFirstClass
     $query = $this->mysql->prepare($sql);
     $query->bindValue(':task', $task);
     return $query->execute();
-    }
+  }
 
   public function deletetask($task_id)
   {
-    $sql="DELETE FROM task WHERE task_id = :task_id";
+    $sql = "DELETE FROM task WHERE task_id = :task_id";
     $query = $this->mysql->prepare($sql);
     $query->bindValue(':task_id', $task_id);
     return $query->execute();
@@ -95,5 +95,14 @@ class MyFirstClass
     $result = $this->mysql->prepare($sql);
     $result->execute();
     return $result->fetchAll(PDO::FETCH_ASSOC);
+  }
+
+  public function logout()
+  {
+    session_start();
+    setcookie(session_name(), '', 100);
+    session_unset();
+    session_destroy();
+    $_SESSION = array();
   }
 }

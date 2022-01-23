@@ -11,6 +11,7 @@ $(document).ready(function () {
             } else {
                 console.log("failure");
             }
+            location.reload(true);
         });
     });
 
@@ -24,6 +25,24 @@ $(document).ready(function () {
             } else {
                 console.log("failure");
             }
+            location.reload(true);
+        });
+    });
+    $('.updateStatus').on('click', function () {
+        var update = 'updatestatus';
+        var updatetaskid = $(this).data('task-id');
+        $.post("toDoList.php", { action: update, updatetaskid: updatetaskid }, function (success) {
+            if (success == 1) {
+                console.log("success");
+            } else {
+                console.log("failure");
+            }
+            location.reload(true);
+        });
+    });
+    $('#logout').on('click', function () {
+        var logout = 'logout';
+        $.post("../login/login.php", { action: logout }, function (success) {
         });
     });
 });

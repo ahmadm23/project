@@ -14,6 +14,7 @@
     <div class="col-md-6 well">
         <div class="heading">
             <h3 class="text-primary">To Do List</h3>
+            <button type="button" class="btn" id="logout">Log Out</button>
         </div>
         <hr style="border-top:1px;" />
         <div class="col-md-2"></div>
@@ -37,7 +38,7 @@
                         <td><?= $task['task_id'] ?></td>
                         <td><?= $task['task'] ?></td>
                         <td><?= $task['status'] ?></td>
-                        <td><button type="button" class="btn btn-success completeTask">&#10003;</button>
+                        <td><button type="button" class="btn btn-success updateStatus" data-task-id="<?= $task['task_id'] ?>">&#10003;</button>
                             <button type="button" class="btn btn-danger deleteTask" data-task-id="<?= $task['task_id'] ?>">X</button>
                         </td>
                     </tr>
