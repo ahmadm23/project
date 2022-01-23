@@ -1,9 +1,10 @@
 <?php
+session_start();
+
 if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
     header("location: ../toDo/toDoList.php");
     exit;
 }
-
 require_once("../MyFirstClass.php");
 $class = new MyFirstClass;
 $users = $class->getUsers();

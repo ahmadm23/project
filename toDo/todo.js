@@ -41,7 +41,7 @@ $(document).ready(function () {
     });
     $('#logout').on('click', function () {
         var logout = 'logout';
-        $.post("../login/login.php", { action: logout }, function (success) {
+        $.post("index.php", { action: logout }, function (success) {
         });
     });
 });
