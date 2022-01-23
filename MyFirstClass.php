@@ -1,6 +1,8 @@
 <?php
 //we may want to change the name of this
 require_once(__DIR__.'/DbConnect.php');
+var_dump( $_SERVER['DOCUMENT_ROOT']);
+
 class MyFirstClass
 {
   private $db;
@@ -24,7 +26,7 @@ class MyFirstClass
     $query->bindValue(':email', $email);
     $query->bindValue(':phone', $phone);
     $query->bindValue(':password', $password);
-    header("location: ../toDo/toDoList.php");
+    header("location: ".$_SERVER['DOCUMENT_ROOT']."/project/toDo/toDoList.php");
     return $query->execute();
   }
 
@@ -105,7 +107,7 @@ class MyFirstClass
     unset($_SESSION);
     session_destroy();
     $_SESSION = array();
-    header("location:index.php");
+    header("location:".$_SERVER['DOCUMENT_ROOT']."/project/index.php");
     exit;
   }
 }

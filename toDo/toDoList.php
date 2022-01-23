@@ -1,9 +1,10 @@
 <?php
 session_start();
-require_once("../MyFirstClass.php");
+
+require_once($_SERVER['HTTP_REFERER']."project/MyFirstClass.php");
 
 if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
-    header("location: ../index.php");
+    header("location: ".$_SERVER['DOCUMENT_ROOT']."/project/index.php");
     exit;
 }
 
@@ -19,14 +20,12 @@ if (isset($_POST['action'])) {
             $class->deletetask($_POST['ahmadstaskid']);
             break;
         case 'updatestatus':
-             $class->updatestatus($_POST['updatetaskid']);
+            $class->updatestatus($_POST['updatetaskid']);
             break;
-            case 'updatestatus':
-                echo $class->updatestatus($_POST['updatetaskid']);
-                break;
-
+        case 'updatestatus':
+            echo $class->updatestatus($_POST['updatetaskid']);
+            break;
     }
 } else {
     include("toDoList.tpl.php");
 }
-
