@@ -1,6 +1,6 @@
 <?php
 //we may want to change the name of this
-require_once(__DIR__.'/DbConnect.php');
+require_once('./DbConnect.php');
 
 class MyFirstClass
 {
@@ -24,7 +24,7 @@ class MyFirstClass
     $query->bindValue(':email', $email);
     $query->bindValue(':phone', $phone);
     $query->bindValue(':password', $password);
-    header("location: ".$_SERVER['DOCUMENT_ROOT']."/project/toDo/toDoList.php");
+    header("location: ./toDoList.php");
     return $query->execute();
   }
 
@@ -55,6 +55,15 @@ class MyFirstClass
     } else {
       return false;
     }
+  }
+
+  public function logout()
+  {
+    session_start();
+    unset($_SESSION);
+    session_destroy();
+    $_SESSION = array();
+    return true;
   }
 
   public function startSessionAndSetUser($username, $user_id_admin)
@@ -101,15 +110,5 @@ class MyFirstClass
     $result->bindValue(':id', $id);
     $result->execute();
     return $result->fetchAll(PDO::FETCH_ASSOC);
-  }
-
-  public function logout()
-  {
-    session_start();
-    unset($_SESSION);
-    session_destroy();
-    $_SESSION = array();
-    header("location:".$_SERVER['DOCUMENT_ROOT']."/project/index.php");
-    exit;
   }
 }
