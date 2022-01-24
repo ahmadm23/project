@@ -1,20 +1,20 @@
 <?php
 session_start();
 
-require_once($_SERVER['HTTP_REFERER']."project/MyFirstClass.php");
+require_once("../MyFirstClass.php");
 
 if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
-    header("location: ".$_SERVER['DOCUMENT_ROOT']."/project/index.php");
+    header("location: ../index.php");
     exit;
 }
 
 $class = new MyFirstClass;
-$tasks = $class->gettasks();
+$tasks = $class->gettasks($_SESSION['id']);
 if (isset($_POST['action'])) {
     switch ($_POST['action']) {
 
         case 'submittask':
-            $class->addtask($_POST['task']);
+            $class->addtask($_POST['task'], $_SESSION['id']);
             break;
         case 'deletetask':
             $class->deletetask($_POST['ahmadstaskid']);

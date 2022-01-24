@@ -2,7 +2,7 @@
 session_start();
 
 if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
-    header("location: ".$_SERVER['DOCUMENT_ROOT']."/project/toDo/toDoList.php");
+    header("location: ../toDo/toDoList.php");
     exit;
 }
 require_once($_SERVER['DOCUMENT_ROOT']."/project/MyFirstClass.php");
@@ -12,7 +12,7 @@ if (isset($_POST['action'])) {
     switch ($_POST['action']) {
         case 'submitUser':
             if ( $class->addNewUser($_POST['username'], $_POST['fname'], $_POST['lname'], $_POST['email'], $_POST['phone'], $_POST['password'])){
-                header("location: ".$_SERVER['DOCUMENT_ROOT']."/project/toDo/toDoList.php");
+                header("location: ../toDo/toDoList.php");
             }
             break;
     }

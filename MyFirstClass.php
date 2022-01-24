@@ -1,7 +1,6 @@
 <?php
 //we may want to change the name of this
 require_once(__DIR__.'/DbConnect.php');
-var_dump( $_SERVER['DOCUMENT_ROOT']);
 
 class MyFirstClass
 {
@@ -43,28 +42,29 @@ class MyFirstClass
     //check the db if a user exists user the username and pass
     //return true or false
     //if its true go to a new function the SETSUSER
-    $sql = "select id from users
+    $sql = "select id, admin from users
             where username=:username and password=:password";
     $result = $this->mysql->prepare($sql);
     $result->bindValue(':username', $username);
     $result->bindValue(':password', $password);
     $result->execute();
-    $id = $result->fetch(PDO::FETCH_COLUMN);
+    $user_id_admin = $result->fetchAll(PDO::FETCH_ASSOC);
 
-    if (isset($id) && !empty($id)) {
-      $this->startSessionAndSetUser($username, $id);
+    if (isset($user_id_admin) && !empty($user_id_admin)) {
+      $this->startSessionAndSetUser($username, $user_id_admin);
       return true;
     } else {
       return false;
     }
   }
 
-  public function startSessionAndSetUser($username, $id)
+  public function startSessionAndSetUser($username, $user_id_admin)
   {
     session_start();
     // Store data in session variables
     $_SESSION["loggedin"] = true;
-    $_SESSION["id"] = $id;
+    $_SESSION["id"] = $user_id_admin['id'];
+    $_SESSION["admin"] = $user_id_admin['admin'];
     $_SESSION["username"] = $username;
   }
 
@@ -76,12 +76,13 @@ class MyFirstClass
     return $query->execute();
   }
 
-  public function addtask($task)
+  public function addtask($task, $id)
   {
-    $sql = "INSERT INTO task (task)
-    VALUES (:task)";
+    $sql = "INSERT INTO task (task, user_id)
+    VALUES (:task, :id)";
     $query = $this->mysql->prepare($sql);
     $query->bindValue(':task', $task);
+    $query->bindValue(':id', $id);
     return $query->execute();
   }
 
@@ -93,10 +94,12 @@ class MyFirstClass
     return $query->execute();
   }
 
-  public function gettasks()
+  public function gettasks($id)
   {
-    $sql = 'select task_id, task, status from task';
+    $sql = "select task_id, task, status from task
+    WHERE user_id=:id";
     $result = $this->mysql->prepare($sql);
+    $result->bindValue(':id', $id);
     $result->execute();
     return $result->fetchAll(PDO::FETCH_ASSOC);
   }

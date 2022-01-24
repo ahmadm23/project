@@ -7,7 +7,7 @@ if (isset($_POST['action'])) {
     switch ($_POST['action']) {
         case 'login':
             if ($class->login($_POST['username'], $_POST['password'])) {
-                header("location: ".$_SERVER['HTTP_REFERER']."/project/toDo/toDoList.php");
+                header("location: ../project/toDo/toDoList.php");
                 exit;
             }
 
@@ -18,7 +18,7 @@ if (isset($_POST['action'])) {
     }
 } else {
     if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
-        header("location: ".$_SERVER['HTTP_REFERER']."project/toDo/toDoList.php");
+        header("location: ../project/toDo/toDoList.php");
         exit;
     }
     include("./login/login.tpl.php");

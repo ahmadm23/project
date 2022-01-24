@@ -10,20 +10,18 @@
 </head>
 
 <body>
-    <div class="col-md-3"></div>
     <div class="col-md-6 well">
         <div class="heading">
-            <h3 class="text-primary">To Do List</h3>
-            <button type="button" class="btn" id="logout">Log Out</button>
+            <h3 class="mt-3 text-center text-primary">To Do List</h3>
+            <div class="col text-center"><button type="button" class="btn btn-warning" id="logout">Log Out</button>
         </div>
         <hr style="border-top:1px;" />
-        <div class="col-md-2"></div>
-        <div class="col-md-8">
-            <input type="text" class="task" name="task" required />
+        <div class="input-group col-md-6 px-3">
+            <input type="text" class="task form-control" name="task" required />
             <button class="btn btn-primary" id="addBtn">Add Task</button>
         </div>
 
-        <table class="table">
+        <table class="table table-striped table-sm">
             <thead>
                 <tr>
                     <th>#</th>

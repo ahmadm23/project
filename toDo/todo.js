@@ -11,6 +11,7 @@ $(document).ready(function () {
             } else {
                 console.log("failure");
             }
+            location.reload(true);
         });
     });
 
