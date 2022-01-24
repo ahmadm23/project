@@ -13,7 +13,7 @@ Class DbConnect{
         if(in_array($_SERVER['REMOTE_ADDR'], $whitelist)){
         $servername = "localhost";
         $username = "root";
-        $password = "";
+        $password = "root";
         $database = "first_db";
         }
         
