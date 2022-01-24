@@ -1,0 +1,8 @@
+when page opens up, want an input - labeled new task, add button with add new task, list of 1-5. each indiv list item will have completed button or trash button.
+
+table in sql,
+columns
+id
+usersid
+todoitem
+completed

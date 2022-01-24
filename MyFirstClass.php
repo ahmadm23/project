@@ -14,7 +14,11 @@ class MyFirstClass
   }
 
 
+<<<<<<< HEAD
   public function addNewUser($username, $firstName, $lastName, $email, $phone, $password)
+=======
+  public function addNewUser($username, $fistName, $lastName, $email, $phone, $password)
+>>>>>>> origin/validation
   {
     $sql = "INSERT INTO users (username, f_name, l_name, email, phone, password)
             VALUES (:username, :f_name, :l_name, :email, :phone, :password)";
@@ -25,7 +29,10 @@ class MyFirstClass
     $query->bindValue(':email', $email);
     $query->bindValue(':phone', $phone);
     $query->bindValue(':password', $password);
+<<<<<<< HEAD
     header("location: ".$_SERVER['DOCUMENT_ROOT']."/project/toDo/toDoList.php");
+=======
+>>>>>>> origin/validation
     return $query->execute();
   }
 
