@@ -47,8 +47,7 @@ class MyFirstClass
     $result->bindValue(':username', $username);
     $result->bindValue(':password', $password);
     $result->execute();
-    $user_id_admin = $result->fetchAll(PDO::FETCH_ASSOC);
-
+    $user_id_admin = $result->fetch(PDO::FETCH_ASSOC);
     if (isset($user_id_admin) && !empty($user_id_admin)) {
       $this->startSessionAndSetUser($username, $user_id_admin);
       return true;
