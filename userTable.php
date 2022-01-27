@@ -8,6 +8,7 @@ require_once("./MyFirstClass.php");
 
 $class = new MyFirstClass;
 $users = $class->getusers();
+$tasks = $class->gettasks($_SESSION['id']);
 if (isset($_POST['action'])) {
     switch ($_POST['action']) {
         case 'getusers00':
