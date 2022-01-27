@@ -18,13 +18,18 @@
             <div class="card-body">
                 <form>
                     <div class="input-group mb-3">
-                    <div class="col-sm-4 mb-3 px-3">
-                        <button type="button" class="btn btn-success" id="admintodo">Your To Do List</button>
-                        <button type="button" class="btn btn-info" id="adminuserpage">User Page</button>
+                    <div class="col-sm-6 mb-3 px-3">
+                        <a href="toDoList.php" class="btn btn-success" id="admintodo">Your To Do List</a>
+                        <a href="userTable.php" class="btn btn-info" id="adminuserpage">User Page</a>
+                        <button type="button" class="btn btn-warning" id="logout">Log Out</button>
+        </div>
                     </div>
             </div>
 
-
+        <!-- Option 1: Bootstrap Bundle with Popper -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="admin.js"></script>
 </body>
 
 </html>

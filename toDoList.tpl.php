@@ -10,17 +10,19 @@
 </head>
 
 <body>
-    <div class="col-md-6 well">
-        <div class="heading">
-            <h3 class="mt-3 text-center text-primary">To Do List</h3>
-            <div class="col text-center"><button type="button" class="btn btn-warning" id="logout">Log Out</button>
+  <div class="container py-2 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col">
+        <div class="card" id="list1" style="border-radius: .75rem; background-color: #eff1f2;">
+          <div class="card-body py-4 px-4 px-md-5">
+
+            <p class="h1 text-center mt-3 mb-4 pb-3 text-primary">My Todo-List <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-todo-list/check1.webp" width="40"></p><div class="col text-center"><button type="button" class="btn btn-warning" id="logout">Log Out</button>
         </div>
         <hr style="border-top:1px;" />
         <div class="input-group col-md-6 px-3">
             <input type="text" class="task form-control" name="task" required />
             <button class="btn btn-primary" id="addBtn">Add Task</button>
-        </div>
-
+        </div><div class="input-group col-md-6 px-3">
         <table class="table table-striped table-sm">
             <thead>
                 <tr>

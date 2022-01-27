@@ -30,7 +30,7 @@ class MyFirstClass
 
   public function getUsers()
   {
-    $sql = "select username,f_name,l_name,email,phone from users";
+    $sql = "select id, username,f_name,l_name,email,phone from users";
     $result = $this->mysql->prepare($sql);
     $result->execute();
     return $result->fetchAll(PDO::FETCH_ASSOC);

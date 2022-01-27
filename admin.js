@@ -1,8 +1,8 @@
 $(document).ready(function () {
-    $('#admintodo').on('click', function () {
-        $.post("admin.php", { action: "admintodo" }, function () { });
-    });
-    $('#adminuserpage').on('click', function () {
-        $.post("admin.php", { action: "adminuserpage" }, function () { });
+    $('#logout').on('click', function () {
+        var logout = 'logout';
+        $.post("index.php", { action: logout }, function (success) {
+            location.reload(true);
+        });
     });
 });
