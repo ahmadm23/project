@@ -11,7 +11,7 @@ $users = $class->getusers();
 $tasks = $class->gettasks($_SESSION['id']);
 if (isset($_POST['action'])) {
     switch ($_POST['action']) {
-        case 'getusers00':
+        case 'getuser00':
             $tasks = $class->gettasks($_POST['usersid00']);
             echo $tasks;
             break;

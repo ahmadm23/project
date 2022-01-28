@@ -5,10 +5,10 @@ $(document).ready(function () {
             console.log(data);
         });
     });
-        $('#myModal').on('click', function () {
-            var usersid = $(this).data('user-id');
-            $.post("userTable.php", { action: "gettask00", usertasks00: userid }, function (success) {
-                console.log(success);
+        $('#logout').on('click', function () {
+            var logout = 'logout';
+            $.post("index.php", { action: logout }, function (success) {
+                location.reload(true);
             });
         });
     });
