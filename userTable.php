@@ -8,15 +8,13 @@ require_once("./MyFirstClass.php");
 
 $class = new MyFirstClass;
 $users = $class->getusers();
-$tasks = $class->gettasks($_SESSION['id']);
 if (isset($_POST['action'])) {
     switch ($_POST['action']) {
-        case 'getuser00':
-            $tasks = $class->gettasks($_POST['usersid00']);
-            echo $tasks;
+        case 'getUsersTask':
+            $modalHtml = $class->getUsersToDoTemplate($_POST["usersId"]);
+            echo json_encode(["success"=>1,"html"=>$modalHtml]);
             break;
     }
 } else {
-
     include("./userTable.tpl.php");
 }

@@ -5,9 +5,9 @@ require_once("./MyFirstClass.php");
 
 $class = new MyFirstClass;
 $tasks = $class->gettasks($_SESSION['id']);
+$viewOnly = false;
 if (isset($_POST['action'])) {
     switch ($_POST['action']) {
-
         case 'submittask':
             $class->addtask($_POST['task'], $_SESSION['id']);
             break;
@@ -16,9 +16,6 @@ if (isset($_POST['action'])) {
             break;
         case 'updatestatus':
             $class->updatestatus($_POST['updatetaskid']);
-            break;
-        case 'updatestatus':
-            echo $class->updatestatus($_POST['updatetaskid']);
             break;
     }
 } else {

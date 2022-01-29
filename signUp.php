@@ -27,9 +27,7 @@ if (isset($_POST['action'])) {
         }
         switch ($_POST['action']) {
             case 'submitUser':
-                if ($class->addNewUser($_POST['username'], $_POST['fname'], $_POST['lname'], $_POST['email'], $_POST['phone'], $_POST['password'])) {
-                    header("location: ./toDoList.php");
-                }
+                echo ($class->addNewUser($_POST['username'], $_POST['fname'], $_POST['lname'], $_POST['email'], $_POST['phone'], $_POST['password']));
                 break;
         }
     } else {

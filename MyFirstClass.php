@@ -111,13 +111,11 @@ class MyFirstClass
     return $result->fetchAll(PDO::FETCH_ASSOC);
   }
 
-  public function gettasksbyids()
-  {
-    $sql = "select  task.task_id, task.task, task.status
-    from users
-    inner join task on users.id=task.user_id";
-    $result = $this->mysql->prepare($sql);
-    $result->execute();
-    return $result->fetchAll(PDO::FETCH_ASSOC);
-  }
+public function getUsersToDoTemplate($id){
+    ob_start();
+    $tasks = $this->gettasks($id);
+    $viewOnly = true;
+    include("./_toDoListTable.tpl.php");
+    return ob_get_clean();
+}
 }

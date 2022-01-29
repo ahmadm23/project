@@ -11,7 +11,7 @@ $(document).ready(function () {
     var submit = 'submitUser';
     $.post("signUp.php", { action: submit, username: userInputValue, fname: fnameInputValue, lname: lnameInputValue, email: emailInputValue, phone: phoneInputValue, password: passwordInputValue }, function (success) {
       if (success == 1) {
-
+        window.location.href("./index.php");
       }
     });
   });
