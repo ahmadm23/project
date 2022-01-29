@@ -16,6 +16,12 @@ Class DbConnect{
         $password = "";
         $database = "first_db";
         }
+        else{
+            $servername = "i0rgccmrx3at3wv3.cbetxkdyhwsb.us-east-1.rds.amazonaws.com";
+            $username = "aq5k2pr2kjvvcmez";
+            $password = "lrxno2oaxrdy8o0n";
+            $database = "glhrxi30zvpf1iqs";
+        }
         
         $mysql = new PDO("mysql:host=$servername;dbname=$database", $username, $password);
         // set the PDO error mode to exception
@@ -23,4 +29,3 @@ Class DbConnect{
         return $mysql;
     }
 }
-?>
