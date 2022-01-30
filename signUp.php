@@ -32,9 +32,11 @@ if (isset($_POST['action'])) {
                 if ($class->isExistingUsername($_POST['username'])) {
                     echo(false);
                 } else {
-                    if ($class->addNewUser($_POST['username'], $_POST['fname'], $_POST['lname'], $_POST['email'], $_POST['phone'], $_POST['password'])){
+                    if ($class->addNewUser($username, $fname, $lname, $email, $phone,  $password)){
                         header("location: ./index.php");
                         exit;
+                    }else{
+                        echo(false);
                     }
                 }
                 break;

@@ -11,7 +11,7 @@ $(document).ready(function () {
     var submit = 'submitUser';
     $.post("signUp.php", { action: submit, username: userInputValue, fname: fnameInputValue, lname: lnameInputValue, email: emailInputValue, phone: phoneInputValue, password: passwordInputValue }, function (data) {
       if (data == false) {
-        alert("This username is already used");
+        alert("Please fill in all fields");
       } else {
         $('body').html(data);
       }
