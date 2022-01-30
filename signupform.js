@@ -9,14 +9,12 @@ $(document).ready(function () {
     var confirm = $('#confirm').val();
 
     var submit = 'submitUser';
-    $.post("signUp.php", { action: submit, username: userInputValue, fname: fnameInputValue, lname: lnameInputValue, email: emailInputValue, phone: phoneInputValue, password: passwordInputValue }, function (success) {
-      if (success == 1) {
-        window.location.href("./index.php");
+    $.post("signUp.php", { action: submit, username: userInputValue, fname: fnameInputValue, lname: lnameInputValue, email: emailInputValue, phone: phoneInputValue, password: passwordInputValue }, function (data) {
+      if (data == false) {
+        alert("This username is already used");
+      } else {
+        $('body').html(data);
       }
     });
   });
-
-
-
-
 });

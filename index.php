@@ -14,7 +14,7 @@ if (isset($_POST['action'])) {
                     exit;
                 }
             } else {
-                echo "Wrong password or email";
+                echo false;
             }
             break;
         case 'logout':

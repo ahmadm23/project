@@ -6,14 +6,13 @@ class Validator
     function __construct()
     {
     }
-
     public function isValidUsername($username)
     {
         if (isset($username) && !empty($username)) {
             if (is_string($username) && $username == trim($username) && strpos($username, ' ') == false) {
                 return true;
             }
-        }var_dump("h1");
+        }
         return false;
     }
 
@@ -23,7 +22,7 @@ class Validator
             if (is_string($fname) && $fname == trim($fname) && strpos($fname, ' ') == false) {
                 return true;
             }
-        }var_dump("h2");
+        }
         return false;
     }
 
@@ -33,7 +32,7 @@ class Validator
             if (is_string($lname) && $lname == trim($lname) && strpos($lname, ' ') == false) {
                 return true;
             }
-        }var_dump("h3");
+        }
         return false;
     }
 
@@ -43,7 +42,7 @@ class Validator
             if (is_string($email) && $email == trim($email) && strpos($email, ' ') == false) {
                 return true;
             }
-        }var_dump("h4");
+        }
         return false;
     }
 
@@ -53,7 +52,7 @@ class Validator
             if (is_string($password) && $password == trim($password) && strpos($password, ' ') == false) {
                 return true;
             }
-        }var_dump("h5");
+        }
         return false;
     }
 
@@ -63,7 +62,7 @@ class Validator
             if (is_string($phone) && $phone == trim($phone) && strpos($phone, ' ') == false && !preg_match("/^\d*$/", $phone)) {
                 return true;
             }
-        }var_dump("h6");
+        }
         return false;
     }
 

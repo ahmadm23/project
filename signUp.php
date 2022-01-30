@@ -25,9 +25,18 @@ if (isset($_POST['action'])) {
         if ($validator->isValidemail($_POST['email'])) {
             $email = $_POST['email'];
         }
+
         switch ($_POST['action']) {
             case 'submitUser':
-                echo ($class->addNewUser($_POST['username'], $_POST['fname'], $_POST['lname'], $_POST['email'], $_POST['phone'], $_POST['password']));
+                $result = ["success" => 0, "message" => "An error occured"];
+                if ($class->isExistingUsername($_POST['username'])) {
+                    echo(false);
+                } else {
+                    if ($class->addNewUser($_POST['username'], $_POST['fname'], $_POST['lname'], $_POST['email'], $_POST['phone'], $_POST['password'])){
+                        header("location: ./index.php");
+                        exit;
+                    }
+                }
                 break;
         }
     } else {

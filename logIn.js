@@ -7,7 +7,11 @@ $(document).ready(function () {
         var login = 'login';
         if (userInputValue.length > 0 && passwordInputValue.length > 0) {
             $.post("index.php", { action: login, username: userInputValue, password: passwordInputValue }, function (loggedIn) {
-                $('body').html(loggedIn);
+                if (loggedIn == false){
+                    alert("Please enter a valid username and password");
+                }else{
+                   $('body').html(loggedIn); 
+                }
             });
         }else{
             console.log("Please fill both fields")

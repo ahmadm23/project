@@ -111,11 +111,22 @@ class MyFirstClass
     return $result->fetchAll(PDO::FETCH_ASSOC);
   }
 
-public function getUsersToDoTemplate($id){
+  public function getUsersToDoTemplate($id)
+  {
     ob_start();
     $tasks = $this->gettasks($id);
     $viewOnly = true;
     include("./_toDoListTable.tpl.php");
     return ob_get_clean();
-}
+  }
+
+  public function isExistingUsername($username)
+  {
+    $sql = "select username from users where username=:username";
+    $result = $this->mysql->prepare($sql);
+    $result->bindValue(':username', $username);
+    $result->execute();
+    $existingUsername = $result->fetch(PDO::FETCH_COLUMN);
+    return !empty($existingUsername);
+  }
 }
