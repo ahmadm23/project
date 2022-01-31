@@ -7,8 +7,7 @@ class Overwatch
   private $db;
   private $mysql;
 
-  function __construct()
-  {
+  function __construct(){
     $this->db = new DbConnect;
     $this->mysql = $this->db->getdbconnect();
   }
