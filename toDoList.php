@@ -1,9 +1,9 @@
 <?php
 session_start();
 
-require_once("./overWatch.php");
+require_once("./Overwatch.php");
 
-$class = new overWatch;
+$class = new Overwatch;
 $tasks = $class->gettasks($_SESSION['id']);
 $viewOnly = false;
 if (isset($_POST['action'])) {

@@ -1,8 +1,8 @@
 <?php
 session_start();
-require_once("./overWatch.php");
+require_once("./Overwatch.php");
 require_once("./Validator.php");
-$class = new overWatch;
+$class = new Overwatch;
 $validator = new Validator;
 $users = $class->getUsers();
 if (isset($_POST['action'])) {

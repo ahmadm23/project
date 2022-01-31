@@ -4,9 +4,9 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
     header("location: ./index.php");
     exit;
 }
-require_once("./overWatch.php");
+require_once("./Overwatch.php");
 
-$class = new overWatch;
+$class = new Overwatch;
 $users = $class->getusers();
 if (isset($_POST['action'])) {
     switch ($_POST['action']) {
