@@ -11,9 +11,7 @@ class Overwatch
     $this->db = new DbConnect;
     $this->mysql = $this->db->getdbconnect();
   }
-  public function addNewUser($username, $firstName, $lastName, $email, $phone, $password)
-
-  {
+  public function addNewUser($username, $firstName, $lastName, $email, $phone, $password){
     $sql = "INSERT INTO users (username, f_name, l_name, email, phone, password)
             VALUES (:username, :f_name, :l_name, :email, :phone, :password)";
     $query = $this->mysql->prepare($sql);
