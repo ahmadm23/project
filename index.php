@@ -1,7 +1,7 @@
 <?php
 session_start();
-require_once("./MyFirstClass.php");
-$class = new MyFirstClass;
+require_once("./overWatch.php");
+$class = new overWatch;
 if (isset($_POST['action'])) {
     switch ($_POST['action']) {
         case 'login':

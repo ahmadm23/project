@@ -4,9 +4,9 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
     header("location: ./index.php");
     exit;
 }
-require_once("./MyFirstClass.php");
+require_once("./overWatch.php");
 
-$class = new MyFirstClass;
+$class = new overWatch;
 $users = $class->getusers();
 if (isset($_POST['action'])) {
     switch ($_POST['action']) {

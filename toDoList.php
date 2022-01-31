@@ -1,9 +1,9 @@
 <?php
 session_start();
 
-require_once("./MyFirstClass.php");
+require_once("./overWatch.php");
 
-$class = new MyFirstClass;
+$class = new overWatch;
 $tasks = $class->gettasks($_SESSION['id']);
 $viewOnly = false;
 if (isset($_POST['action'])) {

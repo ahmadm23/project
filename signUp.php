@@ -1,8 +1,8 @@
 <?php
 session_start();
-require_once("./MyFirstClass.php");
+require_once("./overWatch.php");
 require_once("./Validator.php");
-$class = new MyFirstClass;
+$class = new overWatch;
 $validator = new Validator;
 $users = $class->getUsers();
 if (isset($_POST['action'])) {
